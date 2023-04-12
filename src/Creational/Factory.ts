@@ -20,7 +20,7 @@ interface CarFactory < T extends Car>{
    
 }
 
- getCar<T extends Car> =()=>{
+ const getCar = <T extends Car> ()=>{
   class TeslaCarFactory<T extends Car> implements CarFactory<T >{
       
       introduceYourself(car: T): void {
