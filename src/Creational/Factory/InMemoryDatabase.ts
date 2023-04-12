@@ -13,16 +13,13 @@ abstract class AbstractDatabase<T extends BaseClass>{
 
 class InMemoryDatabase<T extends BaseClass> extends AbstractDatabase<T>{
     
-    constructor() {
-      super()
-      this.db=super.db
-    }
 
   get(id: string) {
+      console.log("The database is",this.db)
       return this.db[id]
   }
   set(newValue: T): void {
-      this.db[newValue.id]
+      this.db[newValue.id] = newValue
   }
 
 }
