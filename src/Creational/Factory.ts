@@ -1,3 +1,9 @@
 type Car ={
-  name:string
+  name:string,
+  model:string,
+  year:Date,
+}
+
+type Mercedes = Car extends {
+
 }
