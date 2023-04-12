@@ -29,7 +29,7 @@ interface CarFactory < T extends Car>{
 
 let CarFactory = getCarFactory<Mercedes>()
 
-let mercedeseCar = new CarFactory()
+let mercedeseCar =  new CarFactory() 
 
 let myCar:Mercedes={
 
