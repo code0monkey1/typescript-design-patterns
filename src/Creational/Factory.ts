@@ -4,23 +4,20 @@ interface Car {
    year:string,
 }
 
-class Mercedes implements Car{
-   
-   name="Merc"
-   model ="S class"
-   year = new Date().getFullYear().toString()
-
-    acceleration(){
-    console.log("I acceleration is 30km/hr")
-   }
+let Mercedes :Car={
+  model:"S-class",
+  name:"Merc",
+  year:'01-02-2020'
 }
+
+
 interface CarFactory < T extends Car>{
    
    introduceYourself(car :T):void
    
 }
 
- const getCar = <T extends Car> ()=>{
+ const getCarFactory = <T extends Car> ()=>{
     class MyCarFactory implements CarFactory<T>{
       
       introduceYourself(car: T): void {
@@ -32,5 +29,4 @@ interface CarFactory < T extends Car>{
   return new MyCarFactory
 }
 
-let car = new Mercedes()
-
+let carFactory = getCarFactory<Car>()
