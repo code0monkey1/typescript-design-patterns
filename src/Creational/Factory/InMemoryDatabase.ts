@@ -5,7 +5,7 @@ type BaseClass={
 
 abstract class AbstractDatabase<T extends BaseClass>{
 
-    protected db:Record<string,T> ={}
+     protected db:Record<string,T> ={}
 
      abstract set(newValue:T):void
      abstract get(id:string):T|undefined
