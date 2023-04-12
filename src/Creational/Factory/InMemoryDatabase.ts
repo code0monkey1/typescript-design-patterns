@@ -1,9 +1,14 @@
-interface DatabaseServices<T>{
-   create(data:T):void
-   read(id:string):void
-   update(data:T):void
-   delete(id:string):void
+interface DatabaseServices<T,R>{
+
+   create(data:T):R|undefined
+   read(id:string):R|undefined
+   update(data:T):R|undefined
+   delete(id:string):R|undefined
+
 }
+
+
+
 
 
 
