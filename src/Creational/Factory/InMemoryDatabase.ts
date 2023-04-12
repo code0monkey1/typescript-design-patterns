@@ -7,12 +7,12 @@ type Pokemon={
   power:number
 }
 
-type Database <T extends BaseType> ={
+interface DatabaseOperations <T extends BaseType>{
      set(newValue:T):void
      get(id:string):T|undefined
 }
 
-class InMemoryDatabase<T extends BaseType> implements Database<T> {
+class InMemoryDatabase<T extends BaseType> implements DatabaseOperations<T> {
     
    private db :Record<string,T> ={};
    
