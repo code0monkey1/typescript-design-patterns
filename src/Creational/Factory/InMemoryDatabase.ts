@@ -1,7 +1,3 @@
-abstract class Database{
-
-}
-
 
 
 
