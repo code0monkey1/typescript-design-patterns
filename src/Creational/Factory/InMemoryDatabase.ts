@@ -1,37 +1,35 @@
-type BaseType={
-  id:string
+
+abstract class AbstractDatabase<T>{
+
+     private db:Record<string,T> ={}
+
+     abstract set(newValue:T):void
+     abstract get(id:string):T|undefined
 }
+
+class InMemoryDatabase<T> extends AbstractDatabase<T>{
+    
+  get(id: string) {
+      return undefined;
+  }
+  set(newValue: T): void {
+      
+  }
+
+}
+
 type Pokemon={
-  id:string,
+  id: string,
   attack:number,
   power:number
 }
-
-interface DatabaseOperations <T extends BaseType>{
-     set(newValue:T):void
-     get(id:string):T|undefined
-}
-
-class InMemoryDatabase<T extends BaseType> implements DatabaseOperations<T> {
-    
-   private db :Record<string,T> ={};
-   
-   set(newValue: T): void {
-       this.db[newValue.id] = newValue;
-   }
-   get(id: string): T | undefined {
-       return this.db[id];
-   }
-}
-
-
 const pokemonDb =  new InMemoryDatabase<Pokemon>() ;
 
-pokemonDb.set({
-  id:"bulbasaur",
-  attack:12,
-  power:14
-})
+// pokemonDb.set({
+//   id:"bulbasaur",
+//   attack:12,
+//   power:14
+// })
 
-console.log(pokemonDb.get("bulbasaur"))
+// console.log(pokemonDb.get("bulbasaur"))
 
