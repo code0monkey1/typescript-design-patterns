@@ -4,10 +4,8 @@ interface Car {
    year:string,
 }
 
-let Mercedes :Car={
-  model:"S-class",
-  name:"Merc",
-  year:'01-02-2020'
+interface Mercedes extends Car{
+  acceleration():void
 }
 
 
@@ -26,7 +24,10 @@ interface CarFactory < T extends Car>{
       }
     }
 
-  return new MyCarFactory
+  return  MyCarFactory
 }
 
-let carFactory = getCarFactory<Car>()
+let CarFactory = getCarFactory<Mercedes>()
+
+let mercedeseCar = new CarFactory()
+
