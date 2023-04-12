@@ -28,7 +28,7 @@ function getCar<T>(){
       }
     }
 
-
+  return new TeslaCarFactory
 }
 
 let car = new Mercedes()
