@@ -25,7 +25,7 @@ class InMemoryDatabase<T extends BaseType> implements Database<T> {
 }
 
 
-const pokemonDb = new InMemoryDatabase<Pokemon>();
+const pokemonDb =  (new InMemoryDatabase<Pokemon>()) ;
 
 pokemonDb.set({
   id:"bulbasaur",
