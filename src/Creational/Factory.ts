@@ -31,3 +31,14 @@ let CarFactory = getCarFactory<Mercedes>()
 
 let mercedeseCar = new CarFactory()
 
+let myCar:Mercedes={
+
+    acceleration() {
+        console.log("acceleration is 20km/hr")
+    },
+    model:"S-Class",
+    name:"Merc",
+    year:"20-12-2009",
+}
+
+mercedeseCar.introduceYourself(myCar)
