@@ -24,7 +24,8 @@ interface CarFactory < T extends Car>{
     class MyCarFactory implements CarFactory<T>{
       
       introduceYourself(car: T): void {
-          
+          console.log("Hi my name is : " + car.name);
+          console.log("I was made in the year : ",car.year)
       }
     }
 
