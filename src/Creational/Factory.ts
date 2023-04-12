@@ -1,15 +1,35 @@
-type Car ={
-  name:string,
-  model:string,
-  year:Date,
+interface Car {
+   name:string,
+   model:string,
+   year:string,
 }
 
-type Mercedes = Car & {
- 
-}
+class Mercedes implements Car{
+   
+   name="Merc"
+   model ="S class"
+   year = new Date().getFullYear().toString()
 
+    acceleration(){
+    console.log("I acceleration is 30km/hr")
+   }
+}
 interface CarFactory < T extends Car>{
    
-   introduceYourself(car :T):string
-  
+   introduceYourself(car :T):void
+   
 }
+
+function getCar<T>(){
+  class TeslaCarFactory<T extends Car> implements CarFactory<T >{
+      
+      introduceYourself(car: T): void {
+          
+      }
+    }
+
+
+}
+
+let car = new Mercedes()
+
