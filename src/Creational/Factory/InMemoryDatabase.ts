@@ -1,19 +1,28 @@
 
-abstract class AbstractDatabase<T>{
+type BaseClass={
+  id: string
+}
 
-     private db:Record<string,T> ={}
+abstract class AbstractDatabase<T extends BaseClass>{
+
+    protected db:Record<string,T> ={}
 
      abstract set(newValue:T):void
      abstract get(id:string):T|undefined
 }
 
-class InMemoryDatabase<T> extends AbstractDatabase<T>{
+class InMemoryDatabase<T extends BaseClass> extends AbstractDatabase<T>{
     
+    constructor() {
+      super()
+      this.db=super.db
+    }
+
   get(id: string) {
-      return undefined;
+      return this.db[id]
   }
   set(newValue: T): void {
-      
+      this.db[newValue.id]
   }
 
 }
@@ -25,11 +34,11 @@ type Pokemon={
 }
 const pokemonDb =  new InMemoryDatabase<Pokemon>() ;
 
-// pokemonDb.set({
-//   id:"bulbasaur",
-//   attack:12,
-//   power:14
-// })
+pokemonDb.set({
+  id:"bulbasaur",
+  attack:12,
+  power:14
+})
 
-// console.log(pokemonDb.get("bulbasaur"))
+console.log(pokemonDb.get("bulbasaur"))
 
