@@ -4,6 +4,10 @@ type Car ={
   year:Date,
 }
 
-type Mercedes = Car extends {
+type Mercedes = Car & {
+ 
+}
+
+interface CarFactory < T extends Car>{
 
 }
