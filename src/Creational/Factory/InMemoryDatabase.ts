@@ -1,12 +1,13 @@
-interface BaseRecord{
+type BaseRecord={
   id:string
 }
 
-interface Pokemon{
+type Pokemon={
   id:string;
   attack:number;
   defense:number;
 }
+
 
 
 
