@@ -31,7 +31,7 @@ class EnhancedAutopilot extends CarDecorator {
         this.decoratedCar = decoratedCar;
     }
     cost() {
-        return this.cost() + 234;
+        return this.decoratedCar.cost() + 234;
     }
     getDescription() {
         return this.decoratedCar.getDescription() + ',Enhanced AutoPilot';

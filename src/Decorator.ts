@@ -34,6 +34,7 @@ class ModelS extends Car{
 
 
 abstract class CarDecorator extends Car{
+  
      public abstract decoratedCar:Car
      public abstract cost(): number
      public abstract getDescription(): string
@@ -57,7 +58,7 @@ class EnhancedAutopilot extends CarDecorator{
      }
 
   public cost(): number {
-    return this.cost()+234
+    return this.decoratedCar.cost()+234
   }
   public getDescription(): string {
     return this.decoratedCar.getDescription()+',Enhanced AutoPilot'
