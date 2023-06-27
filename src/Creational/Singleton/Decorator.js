@@ -86,5 +86,5 @@ var BetterSeats = /** @class */ (function (_super) {
 }(GenericCarDecorator));
 var newTesla = new EnhancedAutopilot(new ModelS());
 newTesla = new BetterSeats(newTesla);
-console.log("Cost", newTesla.cost());
-console.log("Description", newTesla.getDescription());
+console.log("Cost : ", newTesla.cost());
+console.log("Description : ", newTesla.getDescription());

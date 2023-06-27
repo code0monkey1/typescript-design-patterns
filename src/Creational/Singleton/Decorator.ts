@@ -39,8 +39,6 @@ abstract class GenericCarDecorator extends GenericCar{
      public abstract cost(): number
      public abstract getDescription(): string
 
-
-
     }
 
 
@@ -90,6 +88,6 @@ class BetterSeats extends GenericCarDecorator{
 let newTesla :GenericCar = new EnhancedAutopilot(new ModelS()) 
 newTesla = new BetterSeats(newTesla)
 
-console.log("Cost",newTesla.cost())
+console.log("Cost : ",newTesla.cost())
 
-console.log("Description",newTesla.getDescription())
+console.log("Description : ",newTesla.getDescription())
