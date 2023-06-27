@@ -12,3 +12,7 @@
 >When you want a pizza, you ask the pizza restaurant to make it for you. The pizza restaurant makes the pizza and gives it to you.
 >
 >That is an example of the Factory Pattern in Action ! It's like a pizza restaurant that makes pizzas for you.
+
+
+--- 
+## Decorator Pattern
