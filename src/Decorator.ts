@@ -1,6 +1,6 @@
 abstract class Car{
    
-     public description:string 
+     public description!:string
 
    
     public getDescription():string{
