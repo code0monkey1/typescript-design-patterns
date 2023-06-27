@@ -1,6 +1,6 @@
 abstract class GenericCar{
    
-     public abstract description:string
+     abstract description:string
 
     public getDescription():string{
           return this.description
@@ -35,7 +35,7 @@ class ModelS extends GenericCar{
 
 abstract class GenericCarDecorator extends GenericCar{
   
-     public abstract decoratedCar:GenericCar
+      abstract decoratedCar:GenericCar
      public abstract cost(): number
      public abstract getDescription(): string
 
