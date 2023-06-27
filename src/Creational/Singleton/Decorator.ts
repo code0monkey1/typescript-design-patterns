@@ -66,7 +66,29 @@ class EnhancedAutopilot extends GenericCarDecorator{
   
 }
 
+class BetterSeats extends GenericCarDecorator{
+
+  public description='enhanced autopilot'
+  public decoratedCar: GenericCar
+
+   constructor( decoratedCar:GenericCar){
+    
+       super()
+
+        this.decoratedCar = decoratedCar
+     }
+
+  public cost(): number {
+    return this.decoratedCar.cost()*0
+  }
+  public getDescription(): string {
+    return this.decoratedCar.getDescription()+',BetterSeats'
+  }
+  
+}
+
 let newTesla :GenericCar = new EnhancedAutopilot(new ModelS()) 
+newTesla = new BetterSeats(newTesla)
 
 console.log("Cost",newTesla.cost())
 
