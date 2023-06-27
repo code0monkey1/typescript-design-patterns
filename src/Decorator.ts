@@ -1,15 +1,12 @@
 abstract class Car{
    
-     description:string 
-       
-     constructor(description:string,cost:number){
-         this.description=description
-     }
+     public description:string 
+
    
-     getDescription(){
+    public getDescription():string{
           return this.description
      }
 
-     abstract cost() :number
+    public abstract cost() :number
       
 }
