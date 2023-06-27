@@ -1,9 +1,10 @@
-# typescript-design-patterns
- Commonly Used Design Patterns in Typescript
 
 ---
 marp: true
 ---
+# typescript-design-patterns
+ Commonly Used Design Patterns in Typescript
+
 ##  Factory Pattern 
 
 > **ChatGPT explanation** : Let's say you love eating pizza, but you don't know how to make it.   
