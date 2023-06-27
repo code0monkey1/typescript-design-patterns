@@ -1,92 +1,65 @@
-abstract class GenericCar{
-   
-     abstract description:string
-
-    public getDescription():string{
-          return this.description
-     }
-
-    public abstract cost() :number
-      
-    }
-
-
-class ModelX extends GenericCar{
-
-  public description='ModelX'
-
-  public cost(): number {
-    return 2000
-  }
-  
+// Step 1: Define the base class or interface
+interface Carb {
+  drive(): void;
+  honk(): void;
 }
 
-
-class ModelS extends GenericCar{
-
-  public description='ModelS'
-
-  public cost(): number {
-    return 40000
+// Step 2: Implement the base class
+class BasicCar implements Carb {
+  drive() {
+    console.log("The car is moving.");
   }
-  
+
+  honk() {
+    console.log("The car is honking.");
+  }
 }
 
+// Step 3: Create decorators
+class GlowDecorator implements Carb {
+  private car: Carb;
 
-abstract class GenericCarDecorator extends GenericCar{
-  
-      abstract decoratedCar:GenericCar
-     public abstract cost(): number
-     public abstract getDescription(): string
-
-    }
-
-
-
-class EnhancedAutopilot extends GenericCarDecorator{
-
-  public description='enhanced autopilot'
-  public decoratedCar: GenericCar
-
-   constructor( decoratedCar:GenericCar){
-       super()
-
-        this.decoratedCar = decoratedCar
-     }
-
-  public cost(): number {
-    return this.decoratedCar.cost()+234
+  constructor(car: Carb) {
+    this.car = car;
   }
-  public getDescription(): string {
-    return this.decoratedCar.getDescription()+',Enhanced AutoPilot'
+
+  drive() {
+    this.car.drive();
+    console.log("The car is glowing in the dark!");
   }
-  
+
+  honk() {
+    this.car.honk();
+  }
 }
 
-class BetterSeats extends GenericCarDecorator{
+class MusicDecorator implements Carb {
+  private car: Carb;
 
-  public description='enhanced autopilot'
-  public decoratedCar: GenericCar
-
-   constructor( decoratedCar:GenericCar){
-    
-       super()
-
-        this.decoratedCar = decoratedCar
-     }
-
-  public cost(): number {
-    return this.decoratedCar.cost()*0
+  constructor(car: Carb) {
+    this.car = car;
   }
-  public getDescription(): string {
-    return this.decoratedCar.getDescription()+',BetterSeats'
+
+  drive() {
+    this.car.drive();
   }
-  
+
+  honk() {
+    this.car.honk();
+    console.log("The car is playing music!");
+  }
 }
 
-let newTesla :GenericCar = new EnhancedAutopilot(new ModelS()) 
-newTesla = new BetterSeats(newTesla)
+// Step 4: Use the decorators
+let myCar: Carb = new BasicCar();
+myCar.drive(); // Output: "The car is moving."
+myCar.honk(); // Output: "The car is honking."
 
-console.log("Cost : ",newTesla.cost())
+// Decorate the car with additional functionality
+myCar = new GlowDecorator(myCar);
+myCar.drive(); // Output: "The car is moving." followed by "The car is glowing in the dark!"
+myCar.honk(); // Output: "The car is honking."
 
-console.log("Description : ",newTesla.getDescription())
+myCar = new MusicDecorator(myCar);
+myCar.drive(); // Output: "The car is moving." followed by "The car is glowing in the dark!"
+myCar.honk(); // Output: "The car is honking." followed by "The car is playing music!"
