@@ -1,4 +1,4 @@
-abstract class Car{
+abstract class GenericCar{
    
      public abstract description:string
 
@@ -11,7 +11,7 @@ abstract class Car{
     }
 
 
-class ModelX extends Car{
+class ModelX extends GenericCar{
 
   public description='ModelX'
 
@@ -22,7 +22,7 @@ class ModelX extends Car{
 }
 
 
-class ModelS extends Car{
+class ModelS extends GenericCar{
 
   public description='ModelS'
 
@@ -33,9 +33,9 @@ class ModelS extends Car{
 }
 
 
-abstract class CarDecorator extends Car{
+abstract class GenericCarDecorator extends GenericCar{
   
-     public abstract decoratedCar:Car
+     public abstract decoratedCar:GenericCar
      public abstract cost(): number
      public abstract getDescription(): string
 
@@ -45,12 +45,12 @@ abstract class CarDecorator extends Car{
 
 
 
-class EnhancedAutopilot extends CarDecorator{
+class EnhancedAutopilot extends GenericCarDecorator{
 
   public description='enhanced autopilot'
-  public decoratedCar: Car
+  public decoratedCar: GenericCar
 
-   constructor( decoratedCar:Car){
+   constructor( decoratedCar:GenericCar){
     
        super()
 
@@ -66,7 +66,7 @@ class EnhancedAutopilot extends CarDecorator{
   
 }
 
-let newTesla :Car = new EnhancedAutopilot(new ModelS()) 
+let newTesla :GenericCar = new EnhancedAutopilot(new ModelS()) 
 
 console.log("Cost",newTesla.cost())
 
