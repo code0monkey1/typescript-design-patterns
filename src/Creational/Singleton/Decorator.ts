@@ -49,7 +49,6 @@ class EnhancedAutopilot extends GenericCarDecorator{
   public decoratedCar: GenericCar
 
    constructor( decoratedCar:GenericCar){
-    
        super()
 
         this.decoratedCar = decoratedCar
