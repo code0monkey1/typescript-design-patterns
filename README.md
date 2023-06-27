@@ -1,6 +1,9 @@
 # typescript-design-patterns
  Commonly Used Design Patterns in Typescript
 
+---
+marp: true
+---
 ##  Factory Pattern 
 
 > **ChatGPT explanation** : Let's say you love eating pizza, but you don't know how to make it.   
@@ -32,3 +35,4 @@
 
 > The decorator pattern is a way to enhance or modify the behavior of an object without changing its core functionality. It allows you to add or remove features dynamically, making it flexible and reusable.
 
+---
