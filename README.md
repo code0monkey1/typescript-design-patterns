@@ -18,8 +18,11 @@
 ## Decorator Pattern
 
 
-> You take the base class and wrap it around objects containing features that you want .
->Imagine you have a toy car that you really like, but you want to make it more exciting by adding some cool features like flashing lights, a siren sound, and extra speed. Instead of changing the original car itself or creating a completely new car, you can use the decorator pattern to add these features without modifying the original toy car.
+> This pattern is used to add extra features to an existing class .
+
+>Imagine you have a toy car that you really like, but you want to make it more exciting by adding some cool features like flashing lights, a siren sound, and extra speed. 
+
+>Instead of changing the original car itself or creating a completely new car, you can use the decorator pattern to add these features without modifying the original toy car.
 
 > In the decorator pattern, you create separate objects, called decorators, that wrap around the original object (in this case, the toy car) and provide additional functionalities. Each decorator adds a specific feature to the toy car, such as lights, sound, or speed. These decorators can be added or removed as needed, allowing you to customize the toy car based on your preferences.
 
