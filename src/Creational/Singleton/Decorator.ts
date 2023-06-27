@@ -1,9 +1,8 @@
 interface Carc{
-   
+
     getDescription():string
 
     getCost():number
-
 }
 
 
