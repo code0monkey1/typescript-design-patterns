@@ -2,7 +2,6 @@ abstract class Car{
    
      public abstract description:string
 
-   
     public getDescription():string{
           return this.description
      }
@@ -49,7 +48,7 @@ class EnhancedAutopilot extends CarDecorator{
 
   public description='enhanced autopilot'
   public decoratedCar: Car
-  
+
    constructor( decoratedCar:Car){
     
        super()
@@ -58,10 +57,16 @@ class EnhancedAutopilot extends CarDecorator{
      }
 
   public cost(): number {
-    throw new Error("Method not implemented.")
+    return this.cost()+234
   }
   public getDescription(): string {
-    throw new Error("Method not implemented.")
+    return this.decoratedCar.getDescription()+',Enhanced AutoPilot'
   }
   
 }
+
+let newTesla :Car = new EnhancedAutopilot(new ModelS()) 
+
+console.log("Cost",newTesla.cost())
+
+console.log("Description",newTesla.getDescription())
