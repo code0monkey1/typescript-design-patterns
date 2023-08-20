@@ -21,8 +21,8 @@ interface Mediator {
 }
 
 class ConcreteMediator implements Mediator {
-  private colleagueA: Colleague;
-  private colleagueB: Colleague;
+  private colleagueA: Colleague | undefined;
+  private colleagueB: Colleague | undefined;
 
   setColleagueA(colleagueA: Colleague): void {
     this.colleagueA = colleagueA;
@@ -32,16 +32,10 @@ class ConcreteMediator implements Mediator {
     this.colleagueB = colleagueB;
   }
 
-  isColleague(object: unknown): object is Colleague {
-    return (
-      (object as Colleague).receive !== undefined &&
-      (object as Colleague).send !== undefined
-    );
-  }
   notify(sender: Colleague, message: string): void {
-    if (this.isColleague(this.colleagueA) && sender === this.colleagueA) {
+    if (this.colleagueB !== undefined && sender === this.colleagueA) {
       this.colleagueB.receive(message);
-    } else if (sender === this.colleagueB) {
+    } else if (this.colleagueA !== undefined && sender === this.colleagueB) {
       this.colleagueA.receive(message);
     }
   }
