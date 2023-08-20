@@ -1,4 +1,5 @@
 // Decorator Pattern (Structural):
+
 // Adds behavior to objects dynamically without altering their class, allowing for flexible extension of functionality.
 
 interface Coffee {
