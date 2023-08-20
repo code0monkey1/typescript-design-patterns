@@ -1,20 +1,32 @@
-// The Mediator pattern is a Behavioral Design Pattern. It focuses on defining an object that encapsulates how a set of objects interact and communicate with each other, promoting loose coupling between these objects. The Mediator acts as a central hub that coordinates interactions between various objects, allowing them to communicate without direct references to each other.
+// The Mediator pattern is a Behavioral Design Pattern. It focuses on defining an object that encapsulates how a set of objects interact and communicate with each other, promoting loose coupling between these objects.
+
+//The Mediator acts as a central hub that coordinates interactions between various objects, allowing them to communicate without direct references to each other.
 
 // In other words, the Mediator pattern promotes a "many-to-many" relationship between objects, where each object communicates with a single mediator rather than directly communicating with other objects.
 
-//The primary goal of the Mediator pattern is to reduce the dependencies between objects and promote better maintainability and flexibility. It's particularly useful in scenarios where a complex network of interactions between objects exists, and you want to avoid the tight coupling that would arise from direct communication.
+//The primary goal of the Mediator pattern is to reduce the dependencies between objects and promote better maintainability and flexibility.
+
+//It's particularly useful in scenarios where a complex network of interactions between objects exists, and you want to avoid the tight coupling that would arise from direct communication.
 
 // Key participants in the Mediator pattern include:
 
-// Mediator: Defines an interface for communication between Colleague objects.
+// # Mediator: Defines an interface for communication between Colleague objects.
 
-// ConcreteMediator: Implements the Mediator interface and manages the communication and interactions between Colleague objects.
+// # ConcreteMediator: Implements the Mediator interface and manages the communication and interactions between Colleague objects.
 
-// Colleague: Objects that need to communicate with each other. They communicate through the Mediator rather than directly with each other.
+// # Colleague: Objects that need to communicate with each other. They communicate through the Mediator rather than directly with each other.
 
-// ConcreteColleague: Implements the Colleague interface and communicates with other Colleague objects through the Mediator.
+// # ConcreteColleague: Implements the Colleague interface and communicates with other Colleague objects through the Mediator.
 
 // Example in TypeScript:
+
+interface CalculateDiscount {
+  execute(price: number): number;
+}
+
+interface PlaceOrder {
+  execute(price: number[]): number;
+}
 
 interface Mediator {
   notify(sender: Colleague, message: string): void;
